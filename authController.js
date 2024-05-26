@@ -1,5 +1,6 @@
 const User = require("./models/User");
 const Role = require("./models/Role");
+const bcrypt = require("bcryptjs");
 
 class authController {
   async registration(req, res) {
@@ -16,7 +17,6 @@ class authController {
       const user = new User({
         username,
         password: hashPassword,
-        roles,
         roles: [userRole.value],
       });
       await user.save();
