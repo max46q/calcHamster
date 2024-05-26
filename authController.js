@@ -1,3 +1,6 @@
+const User = require("./models/User");
+const Role = require("./models/Role");
+
 class authController {
   async registration(req, res) {
     try {
@@ -15,8 +18,11 @@ class authController {
 
   async getCards(req, res) {
     try {
-        res.json("server worked");
-        console.log("server worked");
+      const userRole = new Role();
+      const adminRole = new Role({ value: "ADMIN" });
+      await userRole.save();
+      await adminRole.save();
+      res.json("server worked");
     } catch (err) {
       console.log(err);
     }
