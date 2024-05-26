@@ -1,5 +1,6 @@
 const User = require("./models/User");
 const Role = require("./models/Role");
+const Cards = require("./models/Card");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -75,6 +76,32 @@ class authController {
       res.json(users);
     } catch (err) {
       console.log(err);
+    }
+  }
+  async addcard(req, res) {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res
+          .status(400)
+          .json({
+            message: "Помилка при створенні карточки",
+            errors: errors.array(),
+          });
+      }
+      const { nameCard, level, price, incomeInHour } = req.body;
+      const candidateCard = await Cards.findOne({ nameCard });
+      if (candidateCard) {
+        return res
+          .status(400)
+          .json({ message: "Карточка з таким іменем вже існує" });
+      }
+      const card = new Cards({ nameCard, level, price, incomeInHour });
+      await card.save();
+      return res.json({ message: "Карточка успішно створена" });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: "Failed to create card" });
     }
   }
 }

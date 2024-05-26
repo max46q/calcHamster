@@ -19,6 +19,17 @@ router.post(
   controller.registration
 );
 router.post("/login", controller.login);
+router.post(
+  "/addcards",
+  [
+    check("nameCard", "поле не повинно бути пустим").notEmpty(),
+    check("level", "Дуже низький або високий рівень картки").isLength({
+      min: 0,
+      max: 2,
+    }),
+  ],
+  controller.addcard
+);
 router.get("/cards", authMiddleware, controller.getCards);
 
 module.exports = router;
