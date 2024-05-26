@@ -13,7 +13,7 @@ class authController {
           .json({ message: "Користувач з таким іменем вже існує" });
       }
       const hashPassword = bcrypt.hashSync(password, 15);
-      const userRole = await Role.find({ name: "USER" });
+      const userRole = await Role.findOne({ value: "USER" });
       const user = new User({
         username,
         password: hashPassword,
