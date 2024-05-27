@@ -28,6 +28,13 @@ app.get("/namek", (req, res) => {
   res.render("namek");
 });
 
+//
+const { handler } = require('./dist/handler');
+
+module.exports = handler;
+export default app;
+//
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const start = async () => {
