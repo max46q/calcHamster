@@ -82,12 +82,10 @@ class authController {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        return res
-          .status(400)
-          .json({
-            message: "Помилка при створенні карточки",
-            errors: errors.array(),
-          });
+        return res.status(400).json({
+          message: "Помилка при створенні карточки",
+          errors: errors.array(),
+        });
       }
       const { nameCard, level, price, incomeInHour } = req.body;
       const candidateCard = await Cards.findOne({ nameCard });
