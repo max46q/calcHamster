@@ -4,82 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>поняли?</title>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
-
-      .text-container {
-        position: relative;
-        width: 50%;
-      }
-
-      .text-box {
-        position: absolute;
-        animation: revealText 2s ease-out forwards;
-        animation-delay: calc(0.5s * var(--index));
-        opacity: 0;
-      }
-
-      .text-box:first-child {
-        font-size: 3rem;
-        top: 20%;
-        left: 10%;
-        animation-delay: 0s;
-      }
-
-      .text-box:nth-child(2) {
-        font-size: 2.4rem;
-        top: 30%;
-        left: 25%;
-      }
-
-      .text-box:nth-child(3) {
-        font-size: 1.92rem;
-        top: 40%;
-        left: 40%;
-      }
-
-      .text-box:nth-child(4) {
-        font-size: 1.536rem;
-        top: 50%;
-        left: 55%;
-      }
-
-      .text-box:nth-child(5) {
-        font-size: 1.152rem;
-        top: 60%;
-        left: 70%;
-      }
-
-      @keyframes revealText {
-        0% {
-          opacity: 0;
-          transform: translateY(50%) scale(1.5);
-        }
-        50% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/namek.css" />
   </head>
   <body>
     <div class="text-container">
       <div class="text-box" style="--index: 0">йдіть</div>
-      <div class="text-box" style="--index: 1">нахуй</div>
-      <div class="text-box" style="--index: 2">я таке</div>
-      <div class="text-box" style="--index: 3">не вмію</div>
-      <div class="text-box" style="--index: 4">робити</div>
+      <div class="text-box" style="--index: 1">нахуй я так</div>
+      <div class="text-box" style="--index: 2">не вмію робити</div>
+      <div class="text-box" style="--index: 3">а вітя</div>
+      <div class="text-box" style="--index: 4">чорт єбаний</div>
     </div>
   </body>
 </html>
