@@ -18,14 +18,7 @@ const bodyParser = require("body-parser");
 app.engine("ejs", require("ejs").renderFile);
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/login", function (req, res) {
-  let error = "";
-  res.render("login", { error });
-});
 
-app.get("/namek", (req, res) => {
-  res.render("namek");
-});
 
 //
 
