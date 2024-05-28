@@ -22,6 +22,11 @@ app.get("/login", function (req, res) {
   res.render("login", { error });
 });
 
+app.get("/namek", function (req, res) {
+  let error = "";
+  res.render("namek", { error });
+});
+
 const PORT = process.env.PORT || 3000;
 
 // Експортуємо функцію, яка створює сервер
