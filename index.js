@@ -24,6 +24,10 @@ app.get("/login", function (req, res) {
 
 const PORT = process.env.PORT || 3000;
 
+// Експортуємо функцію, яка створює сервер
+module.exports = app;
+
+// Функція, яка запускає сервер
 const start = async () => {
   try {
     await mongoose.connect(`${process.env.DB_URL}`);
