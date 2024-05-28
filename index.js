@@ -17,7 +17,7 @@ app.use(express.static("public"));
 app.engine("ejs", require("ejs").renderFile);
 
 // Роут для сторінки логіну
-app.get("/login", function (req, res) {
+app.get("/", function (req, res) {
   let error = "";
   res.render("login", { error });
 });
