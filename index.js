@@ -1,9 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const { handler } = require('./handler');
 const authRouter = require("./authRouter");
 const ejs = require("ejs");
-
-const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -29,13 +28,13 @@ app.get("/namek", (req, res) => {
 });
 
 //
-const { handler } = require('./dist/handler');
 
 module.exports = handler;
-export default app;
 //
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const PORT = process.env.PORT || 3000;
 
 const start = async () => {
   try {
