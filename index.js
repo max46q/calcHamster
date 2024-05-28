@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { handler } = require('./handler');
+const { handler } = require("./handler");
 const authRouter = require("./authRouter");
 const ejs = require("ejs");
 
@@ -18,9 +18,9 @@ const bodyParser = require("body-parser");
 app.engine("ejs", require("ejs").renderFile);
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/", function (req, res) {
+app.get("/login", function (req, res) {
   let error = "";
-  res.render("home", { error });
+  res.render("login", { error });
 });
 
 app.get("/namek", (req, res) => {
