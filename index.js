@@ -22,6 +22,11 @@ app.get("/", function (req, res) {
   res.render("login", { error });
 });
 
+app.get("/registration", function (req, res) {
+  let error = "";
+  res.render("register", { error });
+});
+
 app.get("/namek", function (req, res) {
   let error = "";
   res.render("namek", { error });
